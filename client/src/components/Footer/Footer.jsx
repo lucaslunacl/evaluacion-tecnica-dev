@@ -3,7 +3,7 @@ import './Footer.css'
 function Footer() {
   return (
     <footer >
-      <p>Todo App @ 2022</p>
+      <p className='footer-p'>Todo App @ 2022</p>
     </footer>
   )
 }
