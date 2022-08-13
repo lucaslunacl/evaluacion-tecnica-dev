@@ -9,6 +9,7 @@
     justify-content: space-around;
     padding: 15px;
     color:white;
+    align-items: center;
 }
 .contenedor-nav h1{
     text-align: left;
@@ -16,16 +17,21 @@
 
 
 
-button{
+.btn-nav{
     background-color: #a9fbd7;
     border: 0;
     border-radius: 35px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding: 15px;
+    
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: .9rem;
 }
 
-button:hover{
+.btn-nav:hover{
     cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
 }

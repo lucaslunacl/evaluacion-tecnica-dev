@@ -30,3 +30,6 @@ span, h2 {
 h2{
     font-size: .8rem;
 }
+.borrar:hover{
+    color: red
+}
