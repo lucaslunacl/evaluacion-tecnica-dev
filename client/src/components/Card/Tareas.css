@@ -31,7 +31,17 @@
     display: flex;
     flex-direction: column;
     padding: 15px;
+    width: 95%;
 
+}
+
+.tarea{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.fecha_creacion{
+  text-align: left;
 }
 
 .cont-der h2 {

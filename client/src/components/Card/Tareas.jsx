@@ -3,12 +3,14 @@ import Card from "./Card.jsx";
 import Footer from "../Footer/Footer.jsx";
 import NuevaTarea from "./NuevaTarea.jsx";
 import "./Tareas.css";
+import Loader from "../Loader/Loader.jsx";
 import "../NavBar/NavBar.css";
 import { Link } from "react-router-dom";
 
 import { useEffect, useState } from "react";
 function Tareas() {
   const [modal, setModal] = useState(false);
+  const[tarea, setTarea] = useState();
 
   function cambiarEstadoModal() {
     setModal(true);
@@ -54,8 +56,10 @@ function Tareas() {
   ];
 
   function handleClick(e) {
-    console.log(e.id)
+    setTarea(e)
+    console.log(e.id);
   }
+
   return (
     <div>
       <div className="contenedor-nav">
@@ -79,39 +83,42 @@ function Tareas() {
       <div className="contenedor-cards">
         <div className="cont-izq">
           <h3> Mis tareas </h3>
-          {tareas.map((tarea) => (
-            <Card 
-              key={tarea.id}
-              id={tarea.id}
-              titulo={tarea.titulo}
-              descripcion={tarea.descripcion}
-              fecha={tarea.fecha_creacion}
-            />
-          ))}
+            {tareas.map((tarea) => (
+          <div  key={tarea.id} onClick={() => handleClick(tarea)}>
+              <Card
+                id={tarea.id}
+                titulo={tarea.titulo}
+                descripcion={tarea.descripcion}
+                fecha={tarea.fecha_creacion}
+              />
+          </div>
+            ))}
 
           {todos.map((t) => (
-            <Card onClick={(t) => handleClick(t.id)}
+            <div key={t.id} onClick={() => handleClick(t)}>
+            <Card
+              
               key={t.id}
               id={t.id}
               titulo={t.titulo}
               descripcion={t.descripcion}
               fecha={t.fecha_creacion}
             />
+            </div>
           ))}
         </div>
 
         <div className="cont-der">
           {
-            <div>
-              <h2>Tarea 1</h2>
-              <span>Fecha craecion</span>
+            tarea ? 
+            <div className="tarea">
+
+              <h2>{tarea.titulo}</h2>
+              <span className='fecha_creacion'>{tarea.fecha_creacion}</span>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Aliquam eos odit minus odio perferendis explicabo, dolor optio
-                veritatis officia. Sequi, praesentium! Sint praesentium dolores
-                libero odit officia ducimus deserunt repudiandae?
-              </p>
+                {tarea.descripcion}               </p>
             </div>
+            : <Loader/>
           }
         </div>
       </div>
