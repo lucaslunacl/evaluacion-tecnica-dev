@@ -5,7 +5,7 @@ function NavBar() {
     <div className='contenedor-nav'>
       <h1>To Do App</h1>
 
-      <button>Agregar tarea</button>
+      <button>AGREGAR TAREA</button>
     </div>
   )
 }

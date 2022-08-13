@@ -10,6 +10,9 @@
     padding: 15px;
     color:white;
 }
+.contenedor-nav h1{
+    text-align: left;
+}
 
 
 
@@ -19,8 +22,8 @@ button{
     border-radius: 35px;
     padding-left: 25px;
     padding-right: 25px;
-    font-weight: bold;
-    font-size: 1rem;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: .9rem;
 }
 
 button:hover{

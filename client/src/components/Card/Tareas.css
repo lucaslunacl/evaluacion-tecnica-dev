@@ -9,14 +9,19 @@
 
 
 .cont-der{
-    border: 1px solid black;
+    border: 1px solid rgb(100, 95, 95);
+    border-radius: 10px;
 }
 
 .cont-izq{
+    display: flex;
+    flex-direction: column;
     width: 70%;
     padding: 10px;
     background-color: #d7fdec;
     text-align: left;
     border-radius: 10px;
     margin-right: 8px;
+    align-items: left;
 }
+
