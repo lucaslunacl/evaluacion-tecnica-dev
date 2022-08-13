@@ -5,7 +5,7 @@ function NuevaTarea({ estado, reset, onSubmit }) {
    const  [input, setInput] = useState({
     id: 0,
     titulo: "",
-    fecha_creacion: fechaActual.getDay(),
+    fecha_creacion: String(fechaActual.getDate()).padStart(2, '0') + '/' + String(fechaActual.getMonth() + 1).padStart(2, '0') + '/' + fechaActual.getFullYear() + ' ' + fechaActual.getHours()+':'+ fechaActual.getMinutes(),
     descripcion: "",
   });
 

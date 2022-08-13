@@ -6,8 +6,8 @@ import "./Tareas.css";
 import Loader from "../Loader/Loader.jsx";
 import "../NavBar/NavBar.css";
 import { Link } from "react-router-dom";
-
 import { useEffect, useState } from "react";
+
 function Tareas() {
   const [modal, setModal] = useState(false);
   const[tarea, setTarea] = useState();
@@ -26,6 +26,12 @@ function Tareas() {
 
     setTodos(NuevaTarea);
     console.log(todos);
+  };
+
+  const borrarTarea = (id) => {
+    const borrar = [...todos].filter(todo => todo.id !== id);
+    setTodos(borrar);
+    
   };
 
   const tareas = [
@@ -59,6 +65,8 @@ function Tareas() {
     setTarea(e)
     console.log(e.id);
   }
+
+
 
   return (
     <div>
@@ -103,6 +111,7 @@ function Tareas() {
               titulo={t.titulo}
               descripcion={t.descripcion}
               fecha={t.fecha_creacion}
+              borrar={() =>borrarTarea(t.id)}
             />
             </div>
           ))}
@@ -110,7 +119,7 @@ function Tareas() {
 
         <div className="cont-der">
           {
-            tarea ? 
+            tarea  ? 
             <div className="tarea">
 
               <h2>{tarea.titulo}</h2>
